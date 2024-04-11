@@ -1,0 +1,70 @@
+.newsletter {
+    &__flex {
+        @include flex-space-between;
+        flex-direction: column;
+        align-items: center;
+        margin: 55px 40px;
+        gap: 10px;
+    }
+
+    &__header {
+        text-align: center;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+
+        &-input {
+            padding: 14px;
+            border-radius: 5px;
+            border: solid 1px $colorGrey;
+
+            &::placeholder {
+                color: $colorBlack;
+                letter-spacing: 0.65px;
+            }
+        }
+
+        &-confirmation {
+            color: $colorDarkGreen;
+            font-size: 12px;
+            font-weight: 500;
+            display: none;
+        }
+
+        &-button {
+            background-color: $colorDarkGreen;
+            border: none;
+            color: $colorWhite;
+            padding: 14px 22px;
+            font-weight: 900;
+            line-height: 1.15;
+            width: 144px;
+            cursor: pointer;
+
+            &:active {
+                background-color: red;
+
+                .newsletter__confirmation {
+                    display: inline;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-sm) {
+
+    .newsletter {
+        &__form {
+
+
+            flex-direction: row;
+        }
+    }
+
+}

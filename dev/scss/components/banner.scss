@@ -1,0 +1,101 @@
+.banner {
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 42px;
+    }
+
+    &__header {
+        padding-bottom: 100px;
+        max-width: 270px;
+    }
+
+    &__img {
+        position: absolute;
+        z-index: -1;
+        bottom: 105px;
+        right: 0;
+        object-fit: contain;
+        box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.16);
+        width: 100%;
+        max-height: 240px;
+        max-width: 420px;
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+
+        &-paragraph {
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        &-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+
+            &-button {
+                padding: 13px 20px 12px;
+                font-weight: 900;
+                flex: 1;
+                display: inline-block;
+                text-align: center;
+                width: 140px;
+
+                &--full {
+                    background-color: $colorDarkGreen;
+                    border: solid 3px $colorDarkGreen;
+                    color: $colorWhite;
+
+
+                }
+
+                &--empty {
+                    border: solid 3px $colorDarkGreen;
+                    background-color: $colorWhite;
+                    color: $colorDarkGreen;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-sm) {
+    .banner {
+
+        &__flex {}
+
+        &__header {
+            padding-bottom: 20px;
+            max-width: 315px;
+            margin-top: 20px;
+        }
+
+        &__bottom {
+            justify-content: flex-start;
+            width: 100%;
+            max-width: 300px;
+            gap: 25px;
+
+            &-paragraph {
+                font-size: 12px;
+                line-height: 1.3;
+            }
+
+            &-buttons {
+                gap: 30px;
+            }
+        }
+
+        &__img {
+
+            top: 0;
+            right: 0;
+            width: 445px;
+        }
+    }
+}
